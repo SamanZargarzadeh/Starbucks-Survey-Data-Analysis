@@ -4,7 +4,19 @@
 
 Skills: Data Cleaning, Data clustering, Regression Model, R, Excel
 
-# Exploratory Data Analysis
+## Table of Contents
+
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Regression Analysis](#regression-analysis)
+- [Test and Train](#test-and-train)
+- [Variable Selection](#variable-selection)
+- [Cluster Analysis and Interpretation](#cluster-analysis-and-interpretation)
+- ["What-If" Analysis](#what-if-analysis)
+
+
+
+
+## Exploratory Data Analysis
 Increasing the profits and finding new clients is one the top concerns of every business. Based on the data, we could say satisfaction is the key to finding new customers and increasing profit. In the bellow, two diagrams are shown the impact of customer satisfaction on Profitability and how the customer recommends Starbucks to others. As it is revealed, the relation between profits and satisfaction and recommendation has Linearity. For each point increase in satisfaction, Starbucks' profit and people’s recommendations go up, which is also a value for our company. 
 
 Method: The data is aggregated into separate segments based on the satisfaction point. Ten segments are calculated so the relationship between variables can be defined more clearly. For example, the satisfaction of 5 represents the segment of satisfaction points from 0 to 10. And the profit for this segment is the average of every profit data that we have for this range of satisfaction. And I do the same for other segments. Therefore we have 10 points which represent satisfaction and profit. For the recommendation data, I use the same method as what I explained for profit.
@@ -30,7 +42,7 @@ Every store in these five areas should be inspected. But I look more deeply at t
 
 Looking at the graph, we can understand that the price is the first problem to take care of. Moreover, the average income of people in this zip code is below the average of orange county. So, I suggest in this area we should add a half portion food to our menu and give promo code more than other stores.
 
-# Regression Analysis
+## Regression Analysis
 
 Multiple R-squared:  0.907
 
@@ -40,7 +52,7 @@ From the R code, the Multiple R-squared is calculated as 0.907, which is higher 
 
 From the result, the p-value is calculated < 0.00000000000000022, and based on the guideline, When the p-value is smaller than 0.01, the result could be called very significant. To put it in a nutshell, customer satisfaction, their annual income, and How likely they are to recommend Starbucks to others have a meaningful impact on Starbucks’ average monthly profits and matters in our regression model.
 
-# Test and Train
+## Test and Train
 
 starbucks_training <- as.data.frame(starbucks[1:5000,])
 starbucks_test <-as.data.frame(starbucks[5001:6121,])
@@ -56,12 +68,12 @@ Difference = 0.3547 - 0.2944 = 0.0603
 The R-square for the test sample is 0.2944, which is 0.0603 less than the R-square for the training sample. As this difference is a small amount, so the model’s ability to predict “recommend” in the test sample is acceptable.
 
 
-# Variable selection
+## Variable Selection
 
 X6, X17, and X18 are the variables that are not selected.
 R2 of the forward selection model is 0.3543, which is 0.0004 less than the R2 Training sample. So, we can conclude that these three variables do not play role in our model. Thus, dropping these variables does not matter for the model. Moreover, the p-value results (question one), show that X6, X17, and X18, are not significant at the level of 5%. So, these variables are dropped in the forward selection. 
 
-# Cluster Analysis and Interpretation
+## Cluster Analysis and Interpretation
 
 X <- as.matrix(starbucks[,1:22])
 dim(X) = 6121   22
@@ -91,7 +103,7 @@ X1              X2              X3              X4              X5
 The average predicted value for “Most Satisfied” is 7.33, and it is 2.14 more than the Others’ average predicted value (5.19). Thus, the customers in Most Satisfied segment are more likely to recommend Starbucks by 2.14 points more than other customers’ segment.
 
   
-# “What-If” Analysis
+## “What-If” Analysis
 
 
 round(mean(as.data.frame(OtherPrediction)[,1]),2)
