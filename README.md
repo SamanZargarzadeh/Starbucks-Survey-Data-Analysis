@@ -114,6 +114,7 @@ round(mean(Other$recommend),2)
 
 100*(mean(as.data.frame(OtherPrediction)[,1])-mean(Other$recommend))/mean(Other$recommend)
  =35.73745
+ 
 
 The average of these new predicted values is 7.05, and if we compare it to the average of recommendations of the “Other” Segment, we can assert that the willingness to recommend goes up by 35.7%, which is a significant amount. In Homework 2, we understood that the level of recommendation has a relationship with our profits, so this increase is a worthwhile thing to do.
 
